@@ -2,465 +2,225 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Política de Privacidad – RogaStay</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #F7F6F3; color: #2d3748; line-height: 1.7; }
 
-    :root {
-      --verde:     #2D6A4F;
-      --verde-claro: #52B788;
-      --crema:     #F8F4EE;
-      --gris-txt:  #3D3D3D;
-      --gris-suave:#7A7A7A;
-      --borde:     #D9D4CC;
-      --blanco:    #FFFFFF;
-    }
+    header { background: #2d3748; padding: 32px 24px; text-align: center; }
+    .logo-row { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .logo-box { width: 44px; height: 44px; background: #F7F6F3; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: #2d3748; }
+    .brand { text-align: left; }
+    .brand-name { font-size: 22px; font-weight: 700; color: #F7F6F3; display: block; }
+    .brand-sub { font-size: 9px; color: #E07B54; letter-spacing: 2px; font-weight: 600; }
+    .header-desc { color: #9a9a9a; font-size: 12px; margin-top: 8px; }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .container { max-width: 720px; margin: 0 auto; padding: 36px 20px 80px; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--crema);
-      color: var(--gris-txt);
-      line-height: 1.75;
-    }
+    .fecha-badge { background: #fff; border: 1px solid #e5e3de; border-radius: 10px; padding: 10px 16px; font-size: 13px; color: #9a9a9a; margin-bottom: 28px; display: flex; align-items: center; gap: 8px; }
+    .fecha-dot { width: 6px; height: 6px; border-radius: 3px; background: #E07B54; flex-shrink: 0; }
 
-    /* ── HEADER ── */
-    header {
-      background: var(--verde);
-      padding: 40px 24px 32px;
-      text-align: center;
-    }
-    header .logo-marca {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--blanco);
-      letter-spacing: 0.04em;
-    }
-    header .logo-marca span {
-      color: var(--verde-claro);
-    }
-    header p.subtitulo {
-      margin-top: 6px;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
+    .intro-card { background: #fff; border: 1px solid #e5e3de; border-radius: 14px; padding: 22px; margin-bottom: 28px; font-size: 15px; color: #2d3748; line-height: 1.8; }
 
-    /* ── BANDA DE FECHA ── */
-    .banda-fecha {
-      background: var(--verde-claro);
-      text-align: center;
-      padding: 8px 16px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--verde);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+    .seccion { background: #fff; border: 1px solid #e5e3de; border-radius: 14px; padding: 22px; margin-bottom: 14px; }
+    .sec-num { font-size: 10px; font-weight: 700; color: #E07B54; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 5px; }
+    .sec-titulo { font-size: 16px; font-weight: 700; color: #2d3748; margin-bottom: 14px; }
+    .seccion p { font-size: 14px; color: #4a5568; margin-bottom: 10px; line-height: 1.8; }
+    .seccion p:last-child { margin-bottom: 0; }
+    .seccion strong { color: #2d3748; }
 
-    /* ── CONTENIDO ── */
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-    }
+    ul.lista { list-style: none; padding: 0; margin: 10px 0; display: flex; flex-direction: column; gap: 8px; }
+    ul.lista li { font-size: 14px; color: #4a5568; padding-left: 18px; position: relative; line-height: 1.7; }
+    ul.lista li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 3px; background: #E07B54; }
 
-    .intro-box {
-      background: var(--blanco);
-      border-left: 4px solid var(--verde-claro);
-      border-radius: 6px;
-      padding: 20px 24px;
-      margin-bottom: 36px;
-      font-size: 0.95rem;
-      color: var(--gris-suave);
-    }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+    th { background: #2d3748; color: #F7F6F3; padding: 10px 12px; text-align: left; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid #e5e3de; color: #4a5568; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
 
-    /* Secciones numeradas */
-    section.clausula {
-      margin-bottom: 32px;
-    }
-    .clausula-header {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-    .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--verde-claro);
-      line-height: 1;
-      flex-shrink: 0;
-      min-width: 32px;
-    }
-    .clausula-header h2 {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--verde);
-    }
-    .clausula p,
-    .clausula li {
-      font-size: 0.93rem;
-      color: var(--gris-txt);
-    }
-    .clausula ul {
-      margin: 8px 0 0 18px;
-    }
-    .clausula li {
-      margin-bottom: 5px;
-    }
+    .derechos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+    .derecho-item { background: #F7F6F3; border: 1px solid #e5e3de; border-radius: 10px; padding: 12px; }
+    .derecho-titulo { font-size: 13px; font-weight: 700; color: #2d3748; margin-bottom: 4px; }
+    .derecho-desc { font-size: 12px; color: #9a9a9a; }
 
-    /* Tabla de datos */
-    .tabla-datos {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-      font-size: 0.88rem;
-    }
-    .tabla-datos th {
-      background: var(--verde);
-      color: var(--blanco);
-      text-align: left;
-      padding: 10px 14px;
-      font-weight: 600;
-    }
-    .tabla-datos td {
-      border-bottom: 1px solid var(--borde);
-      padding: 10px 14px;
-      vertical-align: top;
-    }
-    .tabla-datos tr:nth-child(even) td {
-      background: rgba(82,183,136,0.07);
-    }
+    .alerta-box { background: rgba(243,156,18,0.08); border: 1px solid rgba(243,156,18,0.4); border-radius: 10px; padding: 14px; margin: 12px 0; font-size: 13px; color: #b07d0a; line-height: 1.7; }
 
-    /* Alerta de pago */
-    .alerta-pago {
-      background: #FFF8E1;
-      border: 1px solid #FFD54F;
-      border-radius: 6px;
-      padding: 14px 18px;
-      margin-top: 14px;
-      font-size: 0.88rem;
-      color: #5D4037;
-    }
-    .alerta-pago strong { color: #E65100; }
+    .contacto-card { background: #2d3748; border-radius: 14px; padding: 28px; margin-top: 28px; text-align: center; }
+    .contacto-card h3 { color: #F7F6F3; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .contacto-card p { color: #9a9a9a; font-size: 13px; margin-bottom: 16px; }
+    .contacto-email { display: inline-block; background: #E07B54; color: #fff; font-size: 14px; font-weight: 600; padding: 11px 28px; border-radius: 10px; text-decoration: none; }
+    .contacto-detalle { color: #9a9a9a; font-size: 12px; margin-top: 12px; }
 
-    /* Caja de derechos */
-    .derechos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .derecho-item {
-      background: var(--blanco);
-      border: 1px solid var(--borde);
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-size: 0.88rem;
-    }
-    .derecho-item .icono { font-size: 1.3rem; margin-bottom: 6px; }
-    .derecho-item strong { display: block; color: var(--verde); margin-bottom: 3px; }
+    footer { text-align: center; padding: 24px; font-size: 12px; color: #9a9a9a; border-top: 1px solid #e5e3de; margin-top: 8px; }
 
-    /* Divider */
-    hr.divider {
-      border: none;
-      border-top: 1px solid var(--borde);
-      margin: 32px 0;
-    }
-
-    /* Contacto */
-    .contacto-card {
-      background: var(--verde);
-      border-radius: 10px;
-      padding: 24px;
-      color: var(--blanco);
-    }
-    .contacto-card h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-    .contacto-card p { font-size: 0.92rem; margin-bottom: 8px; opacity: 0.9; }
-    .contacto-card a { color: var(--verde-claro); text-decoration: none; }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px 16px;
-      font-size: 0.78rem;
-      color: var(--gris-suave);
-      border-top: 1px solid var(--borde);
-    }
-
-    @media (max-width: 500px) {
-      header .logo-marca { font-size: 1.5rem; }
-      .derechos-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 600px) {
+      .container { padding: 20px 14px 60px; }
+      .seccion { padding: 16px; }
+      .derechos-grid { grid-template-columns: 1fr; }
+      table { font-size: 12px; }
+      th, td { padding: 8px 10px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-marca">Roga<span>Stay</span></div>
-  <p class="subtitulo">Plataforma de alojamiento en Paraguay</p>
+  <div class="logo-row">
+    <div class="logo-box">RS</div>
+    <div class="brand">
+      <span class="brand-name">RogaStay</span>
+      <span class="brand-sub">HOSPEDAJES · QUINTAS · CABANAS</span>
+    </div>
+  </div>
+  <p class="header-desc">Plataforma de alojamiento en Paraguay · Desarrollado por AlannaSoft</p>
 </header>
 
-<div class="banda-fecha">Política de Privacidad — Vigente desde: Junio 2026</div>
+<div class="container">
 
-<main>
-
-  <div class="intro-box">
-    En <strong>RogaStay</strong> (desarrollado por <strong>AlannaSoft</strong>) valoramos tu privacidad.
-    Este documento explica qué datos recolectamos, cómo los usamos y cuáles son tus derechos como usuario
-    de nuestra aplicación móvil disponible en Paraguay.
+  <div class="fecha-badge">
+    <div class="fecha-dot"></div>
+    Politica de Privacidad — Vigente desde: Junio 2026
   </div>
 
-  <!-- 1 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">1</span>
-      <h2>Responsable del Tratamiento de Datos</h2>
-    </div>
-    <p>
-      El responsable del tratamiento de los datos personales recolectados a través de la aplicación
-      <strong>RogaStay</strong> es:
-    </p>
-    <ul>
+  <div class="intro-card">
+    En <strong>RogaStay</strong> (desarrollado por <strong>AlannaSoft</strong>) valoramos tu privacidad. Este documento explica que datos recolectamos, como los usamos y cuales son tus derechos como usuario de nuestra aplicacion movil disponible en Paraguay.
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">01</div>
+    <div class="sec-titulo">Responsable del Tratamiento de Datos</div>
+    <p>El responsable del tratamiento de los datos personales recolectados a traves de la aplicacion <strong>RogaStay</strong> es:</p>
+    <ul class="lista">
       <li><strong>Desarrollador:</strong> AlannaSoft</li>
-      <li><strong>País:</strong> República del Paraguay</li>
+      <li><strong>Pais:</strong> Republica del Paraguay</li>
       <li><strong>Correo de contacto:</strong> alannasoft.py@gmail.com</li>
     </ul>
-  </section>
-
-  <!-- 2 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">2</span>
-      <h2>Datos Personales que Recolectamos</h2>
-    </div>
-    <p>Al usar RogaStay, podemos recolectar los siguientes datos:</p>
-    <table class="tabla-datos">
-      <thead>
-        <tr>
-          <th>Dato</th>
-          <th>Finalidad</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Nombre y apellido</td>
-          <td>Identificar al usuario y personalizar la experiencia</td>
-        </tr>
-        <tr>
-          <td>Correo electrónico</td>
-          <td>Autenticación, recuperación de cuenta y comunicaciones</td>
-        </tr>
-        <tr>
-          <td>Contraseña</td>
-          <td>Acceso seguro (encriptada por Firebase Auth, no accesible por AlannaSoft)</td>
-        </tr>
-        <tr>
-          <td>Historial de reservas</td>
-          <td>Gestión de reservas de cabañas y alojamientos</td>
-        </tr>
-        <tr>
-          <td>Datos de la propiedad (anfitriones)</td>
-          <td>Publicación y gestión de alojamientos en la plataforma</td>
-        </tr>
-        <tr>
-          <td>Datos de transferencia bancaria</td>
-          <td>Referencia de pago para confirmar reservas (ver cláusula 5)</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- 3 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">3</span>
-      <h2>Cómo Usamos tus Datos</h2>
-    </div>
-    <p>Utilizamos tus datos personales exclusivamente para:</p>
-    <ul>
-      <li>Permitirte crear y gestionar tu cuenta en RogaStay.</li>
-      <li>Procesar y confirmar tus reservas de alojamiento.</li>
-      <li>Facilitar la comunicación entre huéspedes y anfitriones.</li>
-      <li>Enviarte notificaciones sobre el estado de tus reservas.</li>
-      <li>Mejorar el funcionamiento y la seguridad de la aplicación.</li>
-      <li>Cumplir con obligaciones legales vigentes en Paraguay.</li>
-    </ul>
-    <p style="margin-top:10px;">
-      <strong>No vendemos, alquilamos ni compartimos tus datos personales con terceros con fines comerciales.</strong>
-    </p>
-  </section>
-
-  <!-- 4 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">4</span>
-      <h2>Almacenamiento y Seguridad</h2>
-    </div>
-    <p>
-      Los datos son almacenados en <strong>Firebase (Google Cloud)</strong>, una plataforma con
-      certificaciones de seguridad internacionales (ISO 27001, SOC 2). Las medidas de seguridad incluyen:
-    </p>
-    <ul>
-      <li>Encriptación de contraseñas mediante Firebase Authentication.</li>
-      <li>Transmisión de datos protegida con HTTPS/TLS.</li>
-      <li>Reglas de acceso en Firestore que limitan la lectura/escritura por usuario.</li>
-      <li>Los servidores de Firebase se encuentran en infraestructura de Google.</li>
-    </ul>
-  </section>
-
-  <!-- 5 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">5</span>
-      <h2>Pagos por Transferencia Bancaria</h2>
-    </div>
-    <p>
-      RogaStay utiliza un sistema de pagos por <strong>transferencia bancaria directa</strong>.
-      No integramos pasarelas de pago de terceros (como tarjetas de crédito o billeteras digitales).
-    </p>
-    <div class="alerta-pago">
-      <strong>⚠️ Importante:</strong> RogaStay <strong>no almacena</strong> números de cuenta bancaria,
-      CBU, datos de tarjetas ni credenciales financieras de los usuarios. Las transferencias se realizan
-      directamente entre el huésped y el anfitrión. AlannaSoft no interviene en la transacción bancaria
-      ni tiene acceso a tus datos financieros personales.
-    </div>
-  </section>
-
-  <!-- 6 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">6</span>
-      <h2>Compartición de Datos con Terceros</h2>
-    </div>
-    <p>
-      Solo compartimos datos con los siguientes terceros cuando es necesario para el funcionamiento de la app:
-    </p>
-    <ul>
-      <li>
-        <strong>Google Firebase / Google LLC:</strong> para autenticación, base de datos y almacenamiento.
-        Consulta la política de privacidad de Google en
-        <a href="https://policies.google.com/privacy" target="_blank" style="color: var(--verde);">policies.google.com/privacy</a>.
-      </li>
-      <li>
-        <strong>Google Play Store:</strong> para distribución de la aplicación.
-      </li>
-    </ul>
-    <p style="margin-top:8px;">
-      No compartimos datos con anunciantes, brokers de datos ni ninguna otra empresa.
-    </p>
-  </section>
-
-  <!-- 7 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">7</span>
-      <h2>Tus Derechos como Usuario</h2>
-    </div>
-    <p>De acuerdo con la legislación paraguaya de protección de datos, tenés derecho a:</p>
-    <div class="derechos-grid">
-      <div class="derecho-item">
-        <div class="icono">👁️</div>
-        <strong>Acceso</strong>
-        Solicitar qué datos tuyos tenemos almacenados.
-      </div>
-      <div class="derecho-item">
-        <div class="icono">✏️</div>
-        <strong>Rectificación</strong>
-        Corregir datos incorrectos o desactualizados.
-      </div>
-      <div class="derecho-item">
-        <div class="icono">🗑️</div>
-        <strong>Eliminación</strong>
-        Pedir que eliminemos tu cuenta y datos personales.
-      </div>
-      <div class="derecho-item">
-        <div class="icono">🚫</div>
-        <strong>Oposición</strong>
-        Oponerte al tratamiento de tus datos en casos específicos.
-      </div>
-      <div class="derecho-item">
-        <div class="icono">📦</div>
-        <strong>Portabilidad</strong>
-        Solicitar una copia de tus datos en formato legible.
-      </div>
-      <div class="derecho-item">
-        <div class="icono">✅</div>
-        <strong>Consentimiento</strong>
-        Retirar tu consentimiento en cualquier momento.
-      </div>
-    </div>
-    <p style="margin-top:14px;">
-      Para ejercer cualquiera de estos derechos, contactanos a: <strong>alannasoft.py@gmail.com</strong>
-    </p>
-  </section>
-
-  <!-- 8 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">8</span>
-      <h2>Menores de Edad</h2>
-    </div>
-    <p>
-      RogaStay no está dirigida a personas menores de 18 años. No recolectamos
-      conscientemente datos de menores. Si detectamos que un menor ha creado una cuenta,
-      procederemos a eliminar su información de inmediato.
-    </p>
-  </section>
-
-  <!-- 9 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">9</span>
-      <h2>Retención de Datos</h2>
-    </div>
-    <p>
-      Conservamos tus datos mientras tu cuenta esté activa en RogaStay. Si solicitás
-      la eliminación de tu cuenta, procederemos a borrar tus datos personales en un plazo
-      máximo de <strong>30 días hábiles</strong>, salvo obligación legal de conservación.
-    </p>
-  </section>
-
-  <!-- 10 -->
-  <section class="clausula">
-    <div class="clausula-header">
-      <span class="num">10</span>
-      <h2>Cambios a esta Política</h2>
-    </div>
-    <p>
-      AlannaSoft se reserva el derecho de actualizar esta Política de Privacidad cuando sea necesario.
-      En caso de cambios significativos, notificaremos a los usuarios a través de la aplicación
-      o por correo electrónico. El uso continuado de RogaStay después de la notificación implica
-      la aceptación de los cambios.
-    </p>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- Contacto -->
-  <div class="contacto-card">
-    <h2>¿Dudas sobre tu privacidad?</h2>
-    <p>Si tenés preguntas, reclamos o solicitudes sobre tus datos personales, contactanos:</p>
-    <p>📧 <a href="mailto:alannasoft.py@gmail.com">alannasoft.py@gmail.com</a></p>
-    <p>📍 República del Paraguay</p>
-    <p style="margin-top:12px; font-size:0.82rem; opacity:0.7;">
-      Responderemos tu solicitud en un plazo máximo de 10 días hábiles.
-    </p>
   </div>
 
-</main>
+  <div class="seccion">
+    <div class="sec-num">02</div>
+    <div class="sec-titulo">Datos Personales que Recolectamos</div>
+    <p>Al usar RogaStay, podemos recolectar los siguientes datos:</p>
+    <table>
+      <thead>
+        <tr><th>Dato</th><th>Finalidad</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nombre y apellido</td><td>Identificar al usuario y personalizar la experiencia</td></tr>
+        <tr><td>Correo electronico</td><td>Autenticacion, recuperacion de cuenta y comunicaciones</td></tr>
+        <tr><td>Contrasena</td><td>Acceso seguro (encriptada por Firebase Auth)</td></tr>
+        <tr><td>Historial de reservas</td><td>Gestion de reservas de cabanas y alojamientos</td></tr>
+        <tr><td>Datos de la propiedad</td><td>Publicacion y gestion de alojamientos en la plataforma</td></tr>
+        <tr><td>Datos de transferencia</td><td>Referencia de pago para confirmar reservas</td></tr>
+        <tr><td>Ubicacion GPS</td><td>Calcular distancias y tracking voluntario "Estoy en camino"</td></tr>
+        <tr><td>Fotos de comprobantes</td><td>Verificacion de pagos por transferencia bancaria</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">03</div>
+    <div class="sec-titulo">Como Usamos tus Datos</div>
+    <p>Utilizamos tus datos personales exclusivamente para:</p>
+    <ul class="lista">
+      <li>Permitirte crear y gestionar tu cuenta en RogaStay</li>
+      <li>Procesar y confirmar tus reservas de alojamiento</li>
+      <li>Facilitar la comunicacion entre huespedes y anfitriones</li>
+      <li>Enviarte notificaciones sobre el estado de tus reservas</li>
+      <li>Mostrar tu ubicacion al dueno cuando activas voluntariamente "Estoy en camino"</li>
+      <li>Mejorar el funcionamiento y la seguridad de la aplicacion</li>
+      <li>Cumplir con obligaciones legales vigentes en Paraguay</li>
+    </ul>
+    <p><strong>No vendemos, alquilamos ni compartimos tus datos personales con terceros con fines comerciales.</strong></p>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">04</div>
+    <div class="sec-titulo">Almacenamiento y Seguridad</div>
+    <p>Los datos son almacenados en <strong>Firebase (Google Cloud)</strong>, una plataforma con certificaciones de seguridad internacionales (ISO 27001, SOC 2). Las medidas de seguridad incluyen:</p>
+    <ul class="lista">
+      <li>Encriptacion de contrasenas mediante Firebase Authentication</li>
+      <li>Transmision de datos protegida con HTTPS/TLS</li>
+      <li>Reglas de acceso en Firestore que limitan la lectura/escritura por usuario</li>
+      <li>Servidores ubicados en la region de Sudamerica (Sao Paulo, Brasil)</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">05</div>
+    <div class="sec-titulo">Pagos por Transferencia Bancaria</div>
+    <p>RogaStay utiliza un sistema de pagos por <strong>transferencia bancaria directa</strong>. No integramos pasarelas de pago de terceros.</p>
+    <div class="alerta-box">
+      Importante: RogaStay <strong>no almacena</strong> numeros de cuenta bancaria, datos de tarjetas ni credenciales financieras. Las transferencias se realizan directamente entre el huesped y el anfitrion. AlannaSoft no interviene en la transaccion bancaria.
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">06</div>
+    <div class="sec-titulo">Ubicacion y GPS</div>
+    <p>RogaStay solicita acceso a tu ubicacion para dos propositos especificos:</p>
+    <ul class="lista">
+      <li><strong>Ubicacion aproximada:</strong> para calcular la distancia entre vos y las cabanas disponibles. Solo se usa mientras la app esta abierta.</li>
+      <li><strong>Ubicacion en tiempo real:</strong> unicamente cuando el turista activa manualmente el boton "Estoy en camino". Podes detenerla tocando "Llegue a destino".</li>
+    </ul>
+    <p>Nunca rastreamos tu ubicacion en segundo plano sin tu consentimiento explicito.</p>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">07</div>
+    <div class="sec-titulo">Comparticion de Datos con Terceros</div>
+    <p>Solo compartimos datos con los siguientes terceros cuando es necesario:</p>
+    <ul class="lista">
+      <li><strong>Google Firebase / Google LLC:</strong> para autenticacion, base de datos y almacenamiento</li>
+      <li><strong>Google Play Store:</strong> para distribucion de la aplicacion</li>
+    </ul>
+    <p>No compartimos datos con anunciantes, brokers de datos ni ninguna otra empresa.</p>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">08</div>
+    <div class="sec-titulo">Tus Derechos como Usuario</div>
+    <p>De acuerdo con la legislacion paraguaya de proteccion de datos, tenes derecho a:</p>
+    <div class="derechos-grid">
+      <div class="derecho-item"><div class="derecho-titulo">Acceso</div><div class="derecho-desc">Solicitar que datos tuyos tenemos almacenados</div></div>
+      <div class="derecho-item"><div class="derecho-titulo">Rectificacion</div><div class="derecho-desc">Corregir datos incorrectos o desactualizados</div></div>
+      <div class="derecho-item"><div class="derecho-titulo">Eliminacion</div><div class="derecho-desc">Pedir que eliminemos tu cuenta y datos personales</div></div>
+      <div class="derecho-item"><div class="derecho-titulo">Portabilidad</div><div class="derecho-desc">Solicitar una copia de tus datos en formato legible</div></div>
+      <div class="derecho-item"><div class="derecho-titulo">Oposicion</div><div class="derecho-desc">Oponerte al tratamiento de tus datos en casos especificos</div></div>
+      <div class="derecho-item"><div class="derecho-titulo">Consentimiento</div><div class="derecho-desc">Retirar tu consentimiento en cualquier momento</div></div>
+    </div>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">09</div>
+    <div class="sec-titulo">Menores de Edad</div>
+    <p>RogaStay no esta dirigida a personas menores de 18 anos. No recolectamos conscientemente datos de menores. Si detectamos que un menor ha creado una cuenta, procederemos a eliminar su informacion de inmediato.</p>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">10</div>
+    <div class="sec-titulo">Retencion de Datos</div>
+    <p>Conservamos tus datos mientras tu cuenta este activa en RogaStay. Si solicitas la eliminacion de tu cuenta, procederemos a borrar tus datos personales en un plazo maximo de <strong>30 dias habiles</strong>, salvo obligacion legal de conservacion.</p>
+  </div>
+
+  <div class="seccion">
+    <div class="sec-num">11</div>
+    <div class="sec-titulo">Cambios a esta Politica</div>
+    <p>AlannaSoft se reserva el derecho de actualizar esta Politica de Privacidad cuando sea necesario. En caso de cambios significativos, notificaremos a los usuarios a traves de la aplicacion o por correo electronico.</p>
+  </div>
+
+  <div class="contacto-card">
+    <h3>Dudas sobre tu privacidad?</h3>
+    <p>Si tenes preguntas, reclamos o solicitudes sobre tus datos personales, contactanos. Responderemos en un plazo maximo de 10 dias habiles.</p>
+    <a class="contacto-email" href="mailto:alannasoft.py@gmail.com">alannasoft.py@gmail.com</a>
+    <p class="contacto-detalle">Republica del Paraguay</p>
+  </div>
+
+</div>
 
 <footer>
-  © 2026 AlannaSoft · RogaStay · República del Paraguay · Todos los derechos reservados
+  &copy; 2026 AlannaSoft &middot; RogaStay &middot; Republica del Paraguay &middot; Todos los derechos reservados
 </footer>
 
 </body>
